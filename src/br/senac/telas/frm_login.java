@@ -160,6 +160,7 @@ public class frm_login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaKeyPressed
     
     public void login(){
+        //C:\Program Files (x86)\Jaspersoft\iReport-5.6.0
         String sql = "select * from usuarios where login =? and senha =?";
         
         try {
