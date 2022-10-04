@@ -166,6 +166,11 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
             }
         });
 
+        tbLista = new javax.swing.JTable() {
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;
+            }
+        };
         tbLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -182,6 +187,8 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbLista.setFocusable(false);
+        tbLista.getTableHeader().setReorderingAllowed(false);
         tbLista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbListaMouseClicked(evt);
@@ -318,6 +325,9 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
 
     private void tbListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaMouseClicked
         carregaCampos();
+        btnInserir.setEnabled(false);
+        btnRemover.setEnabled(true);
+        btnAlterar.setEnabled(true);
     }//GEN-LAST:event_tbListaMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
