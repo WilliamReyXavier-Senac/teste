@@ -41,8 +41,8 @@ public class frm_Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menuUsuario = new javax.swing.JMenuItem();
+        menuContato = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         menGerarRelUsuarios = new javax.swing.JMenuItem();
         menGerarRelContatos = new javax.swing.JMenuItem();
@@ -77,16 +77,21 @@ public class frm_Principal extends javax.swing.JFrame {
 
         jMenu3.setText("Cadastrar");
 
-        jMenuItem1.setText("Usuário");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menuUsuario.setText("Usuário");
+        menuUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menuUsuarioActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        jMenu3.add(menuUsuario);
 
-        jMenuItem2.setText("Contato");
-        jMenu3.add(jMenuItem2);
+        menuContato.setText("Contato");
+        menuContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuContatoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuContato);
 
         jMenu1.add(jMenu3);
 
@@ -135,9 +140,11 @@ public class frm_Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void menuUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        frm_CadastroUsuarios usuarios = new frm_CadastroUsuarios();
+        usuarios.setVisible(true);
+    }//GEN-LAST:event_menuUsuarioActionPerformed
 
     private void menGerarRelContatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menGerarRelContatosActionPerformed
         /*
@@ -183,6 +190,12 @@ public class frm_Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menGerarRelUsuariosActionPerformed
 
+    private void menuContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuContatoActionPerformed
+        // TODO add your handling code here:
+        frm_CadastroContatos contatos = new frm_CadastroContatos();
+        contatos.setVisible(true);
+    }//GEN-LAST:event_menuContatoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,11 +238,11 @@ public class frm_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem menGerarRelContatos;
     private javax.swing.JMenuItem menGerarRelUsuarios;
+    private javax.swing.JMenuItem menuContato;
+    private javax.swing.JMenuItem menuUsuario;
     // End of variables declaration//GEN-END:variables
 }

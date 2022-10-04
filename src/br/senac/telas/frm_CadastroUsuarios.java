@@ -73,9 +73,9 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtLogin = new javax.swing.JTextField();
-        btnInserir = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
-        btnAlterar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -100,7 +100,7 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Usuarios");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/logo.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/user.png")).getImage());
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -124,16 +124,16 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
             }
         });
 
-        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/add.png"))); // NOI18N
-        btnInserir.setText("Inserir");
-        btnInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/add.png"))); // NOI18N
+        btnAdicionar.setText("Adicionar");
+        btnAdicionar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnInserirMouseClicked(evt);
+                btnAdicionarMouseClicked(evt);
             }
         });
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirActionPerformed(evt);
+                btnAdicionarActionPerformed(evt);
             }
         });
 
@@ -145,11 +145,11 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
             }
         });
 
-        btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/edit.png"))); // NOI18N
-        btnAlterar.setText("Alterar");
-        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/edit.png"))); // NOI18N
+        btnEditar.setText("Alterar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
@@ -214,18 +214,13 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap(501, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnAdicionar)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtBuscar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInserir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAlterar))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel3)
@@ -249,7 +244,12 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(jLabel6)
                                                 .addGap(29, 29, 29))
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtBuscar)))
                         .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
@@ -280,18 +280,17 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInserir, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnAlterar)
-                        .addComponent(btnRemover)))
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionar)
+                    .addComponent(btnRemover)
+                    .addComponent(btnEditar))
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -303,13 +302,13 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDActionPerformed
 
-    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         alterarDados();
-    }//GEN-LAST:event_btnAlterarActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         adicionar();
-    }//GEN-LAST:event_btnInserirActionPerformed
+    }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
@@ -319,15 +318,15 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
         pesquisar();
     }//GEN-LAST:event_txtBuscarKeyReleased
 
-    private void btnInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInserirMouseClicked
+    private void btnAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseClicked
         adicionar();
-    }//GEN-LAST:event_btnInserirMouseClicked
+    }//GEN-LAST:event_btnAdicionarMouseClicked
 
     private void tbListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaMouseClicked
         carregaCampos();
-        btnInserir.setEnabled(false);
+        btnAdicionar.setEnabled(false);
         btnRemover.setEnabled(true);
-        btnAlterar.setEnabled(true);
+        btnEditar.setEnabled(true);
     }//GEN-LAST:event_tbListaMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -453,8 +452,8 @@ public class frm_CadastroUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlterar;
-    private javax.swing.JButton btnInserir;
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnRemover;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

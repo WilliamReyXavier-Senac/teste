@@ -54,7 +54,7 @@ public class frm_CadastroContatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Contatos");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/logo.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/br/senac/icones/contato.png")).getImage());
 
         jLabel1.setText("ID");
 
